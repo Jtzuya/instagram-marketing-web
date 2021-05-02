@@ -1,0 +1,105 @@
+.feature-section {
+    min-width: clamp(250px, 8vw, 854px);
+    margin: 0 auto;
+    padding: 0px 20px;
+}
+
+.feat-start {
+    text-align: center;
+}
+
+.feat-start h2 {
+    font-size: clamp(16px, 8vw, 40px);
+    font-family: 'Poppins', sans-serif;
+    line-height: 113%;
+    margin-bottom: clamp(8px, 3vh, 10px);
+    margin-top: 30px;
+}
+
+.feat-main-p {
+    font-size: clamp(8px, 8vw, 16px);
+    margin-bottom: clamp(60px, 8vh, 150px);
+}
+
+.feat .top{
+    display: flex;
+    flex-wrap: wrap;
+    text-align: left;
+    justify-content: space-between;
+}
+
+.highlight {
+    text-transform: uppercase;
+    letter-spacing: 0.15rem;
+    font-weight: 300;
+    margin-bottom: 8px;
+    font-size: clamp(12px, 8vw, 14px);
+}
+
+.feat h3 {
+    margin-bottom: 14px;
+    font-size: clamp(21px, 3vw, 30px);
+}
+
+.feature-sub-p {
+    font-size: clamp(8px, 8vw, 16px);
+    margin-bottom: 30px;
+}
+
+.feature-button {
+    margin-bottom: 1rem;
+}
+
+.feat a {
+    color: #25252A;
+}
+
+.feat a:hover {
+    transform: scale(1.1);
+}
+
+.feat img {
+    min-width: clamp(250px, 3vw, 500px);
+    width: 100%;
+}
+
+/* special cases ( highlight color ) */
+body > section > div.feat.top > div.feat-left > p.highlight {
+    color: #B33CDB;    
+}
+
+body > section > div.feat.center > div.feat-left > p.highlight {
+    color: #FBBA33;
+}
+
+body > section > div.feat.bottom > div.feat-left > p.highlight {
+    color: #DE2879;
+}
+
+
+@media(min-width: 768px) {
+    .feat {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        min-width: clamp(250px, 8vw, 854px);
+        align-items: center;
+        width: 100%;
+        margin: 0 auto 5rem auto;
+        padding: 0 clamp(8rem, 8vw, 15rem);
+        grid-gap: clamp(4rem, 3vw, 10rem);
+    }
+
+    .feat-start h2 {
+        margin-top: 120px;
+        padding-bottom: 10px;
+    }
+
+    /* Center special case, works like reverse by setting their particular order */
+    body > section > div.feat.center > div.feat-right > img { 
+        order: 1;
+    }
+
+    body > section > div.feat.center > div.feat-left {
+        order: 2;
+    }
+}

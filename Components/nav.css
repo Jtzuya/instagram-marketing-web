@@ -1,0 +1,139 @@
+.logo img {
+    width: 105px;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    background-color: orange;
+}
+
+.menu-btn {
+    display: flex;
+    justify-content: end;
+}
+
+.nav-cta {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: url("./images/hero-image.png") no-repeat;
+    mask-image: linear-gradient(to left, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.3));
+    height: 100vh;
+    width: 70%;    /* controls the menu nav-cta */
+    transform: translateX(100vw); /* hides the nav-cta*/
+    transition: transform 0.3s ease-in-out;
+    background-color: black;
+}
+
+.nav-cta.open {
+    transform: translateX(0);   /* when click the nav-cta shows*/
+}
+
+                                                            /* nav menu button */
+.menu-btn {
+    position: relative;
+    align-items: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    cursor: pointer;
+    z-index: 1;
+    margin-bottom: 0.5rem;
+}
+
+.menu-btn__lines,
+.menu-btn__lines::before,
+.menu-btn__lines::after {
+    width: 1.5rem;
+    height: 0.1rem;
+    background-color: #111111;
+    transition: all 0.5s ease-in-out;
+}
+
+.menu-btn__lines::before,
+.menu-btn__lines::after {
+    content: "";
+    position: absolute;
+}
+
+.menu-btn__lines::before {
+    transform: translateY(-0.5rem);
+}
+
+.menu-btn__lines::after {
+    transform: translateY(0.5rem);
+}
+
+                                                                /* animation */
+.menu-btn.open .menu-btn__lines {
+    transform: translateX(2rem);
+    background-color: transparent;
+}
+.menu-btn.open .menu-btn__lines::before {
+    transform: rotate(45deg) translate(-1.5rem, 1.5rem);
+    background-color: #ffffff;
+}
+.menu-btn.open .menu-btn__lines::after {
+    transform: rotate(-45deg) translate(-1.5rem, -1.5rem);
+    background-color: #ffffff;
+}
+
+                                                                                    /* mobile nav styling */
+.nav-cta {
+    padding: 5rem 2rem 0 2rem;
+    text-align: center;
+}
+
+.nav-cta li {
+    padding: 0.5rem 0;
+}
+
+.nav-cta a {
+    color: white;
+}
+
+
+/* media queries */
+@media (min-width: 768px) {
+    .nav-cta {
+        transform: unset;
+        height: unset;
+        padding-top: 0.9rem;
+        background: unset;
+        width: 70%;    /* controls the menu nav-cta */
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        mask-image: none;
+    }
+
+    .nav-cta a {
+        color: #f9f9f9;
+        padding-left: 2rem;
+    }
+
+    .menu {
+        display: flex;
+        flex: 2;    /* this stretches its width */
+    }
+
+    .demo {
+        padding-right: 4rem;
+    }
+
+    .menu-btn {
+        display: none;
+    }
+}
+
+@media (min-width: 1024px) {
+    nav, .demo {
+        padding: 0 8rem;
+    }
+}
